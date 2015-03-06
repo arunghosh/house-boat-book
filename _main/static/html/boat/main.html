@@ -1,0 +1,18 @@
+
+
+<div class="boat-banner">
+	<div class="head">
+		<h3>{{boat.name}} ({{boat.type}})</h3>
+		<h4>{{boat.no_room}} Rooms {{boat.ac_type}}</h4>
+	</div>
+	<div class="span">
+		<ul ng-hide="_ae"><li class="btn btn-sm" ng-click="_ae=true"><span class="glyphicon glyphicon-pencil"></span></li><li class="amenity" ng-repeat="a in boat.amenities">{{a}}</li></ul>
+		<ul ng-show="_ae"><li class="btn btn-sm" ng-click="_ae=false"><span class="glyphicon glyphicon-remove"></span></li><li class="amenity" ng-class="{checked:a.checked}" ng-click="a.toggle()" ng-repeat="a in amenities">{{a.name}}</li></ul>
+	</div>
+</div>
+<hr class="clrb">
+<br>
+<boat-price></boat-price>
+<br>
+<boat-mtnc></boat-mtnc>
+<ul class="images"><li ng-repeat="i in boat.images"><img ng-src="{{i.url}}"></li></ul>

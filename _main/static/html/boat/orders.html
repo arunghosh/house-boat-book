@@ -1,0 +1,7 @@
+<a class="btn btn-primary" ng-click="_cnew_show=true"><span class="glyphicon glyphicon-plus-sign"></span>Add Order</a>
+<br>
+<br>
+<order-list list="oc.orders"></order-list>
+<modal-dialog show="_cnew_show" width="700px" height="700px;" title="New Order">
+	<order-create boat-id="{{oc.boatId}}"></order-create>
+</modal-dialog>

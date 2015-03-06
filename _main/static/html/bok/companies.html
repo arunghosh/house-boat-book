@@ -1,0 +1,14 @@
+<table class="table table-bordered table-hover ptr">
+	<tr>
+		<th>#</th>
+		<th>Company</th>
+		<th>No of Boats</th>
+		<th>No of Orders</th>
+	</tr>
+	<tr ng-repeat="c in companies" ng-click="showCompany(c)">
+		<td>{{$index + 1}}</td>
+		<td>{{c.name}}</td>
+		<td>{{c.no_boats}}</td>
+		<td></td>
+	</tr>
+</table>

@@ -1,0 +1,86 @@
+<!-- <form role="form">
+	<table class="fv-table">
+		<tr>
+			<td class="field">Customer Name</td>
+			<td class="value"><input type="text"></td>
+		</tr>
+		<tr>
+			<td class="field">Email</td>
+			<td class="value"><input type="text" ng-model="order.email"></td>
+		</tr>
+		<tr>
+			<td class="field">Mobile #</td>
+			<td class="value"><input type="number" ng-model="order.phone"></td>
+		</tr>
+	</table>
+</form> -->
+<form name="form" role="form" ng-submit="submit()">
+<table class="book-count">
+	    <tr><td><quick-datepicker ng-model='order.date' disable-timepicker="true" label-format='EEEE, MMMM d, yyyy' required></quick-datepicker></td><td>
+    <div class="input-group">
+        <select ng-options="n for n in []|range:1:boat.max_adult" ng-model="order.no_adult"></select>
+        <span class="input-group-addon">Adults</span>
+    </div>
+    </td><td>
+    <div class="input-group">
+        <select ng-options="n for n in []|range:0:boat.max_child" ng-model="order.no_child"></select>
+        <span class="input-group-addon">Children</span>
+    </div>
+    </td>
+    </tr>
+
+</table>
+<table class="fv-table">
+    <tr><td colspan="2"><div class="head">Cost Details</div></td></tr>
+	<tr>
+		<td class="field">{{boat.no_adult}} adults</td>
+		<td class="value">{{price.base}}</td>
+	</tr>
+	<tr>
+		<td class="field">{{order.no_adult}} adults and {{order.no_child}} children</td>
+		<td class="value hl">{{order.total}}</td>
+	</tr>
+    <tr><td colspan="2"><div class="head">Contact Details</div></td></tr>
+    <tr>
+        <td class="field">Name</td>
+        <td class="value">
+            <input type="text" ng-model="order.name" placeholder="Enter your full name" required>
+        </td>
+    </tr>
+    <tr>
+        <td class="field">E-mail</td>
+        <td class="value"><input type="email" ng-model="order.email" placeholder="Email Address" required>
+        </td>
+    </tr>
+    <tr>
+        <td class="field">Mobile</td>
+        <td class="value">
+        <div class="input-group">
+            <span class="input-group-addon">+91</span>
+            <input type="number" ng-model="order.phone" placeholder="Phone Number" required>
+        </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="field">Address</td>
+        <td class="value"><input type="text" ng-model="order.address" placeholder="Address" required></td>
+    </tr>
+    <tr>
+        <td class="field">City</td>
+        <td class="value"><input type="text" ng-model="order.city" placeholder="City" required></td>
+    </tr>
+    <tr>
+        <td class="field">State</td>
+        <td class="value"><input type="text" ng-model="order.state" placeholder="State" required></td>
+    </tr>
+    <tr>
+        <td colspan="2"><label><input type="checkbox" ng-model="order.req_drop">Require pick and drop(additional charges apply)</label></td>
+    </tr>
+    <tr>
+        <td><button type="submit" class="btn btn-primary" ng-hide="success" ng-disabled_="form.$invalid">Book</button></td>
+    </tr>
+</table>
+<div class="alert alert-danger" ng-show="error">{{error}}</div>
+<div class="alert alert-success" ng-show="success">{{success}}</div>
+
+</form>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}BoK{% endblock %}
+{% block content %}
+
+{% verbatim %}
+<div ng-controller="addReviewCtrl">
+<form ng-submit="update()">
+	<textarea ng-model="review.comment"></textarea>
+	<table class="fv-table">
+		<tr>
+			<td>Cleanliness</td>
+			<td><ng-rating model="cleanliness"></ng-rating></td>
+		</tr>
+		<tr>
+			<td ng-click="show()">Food</td>
+			<td><ng-rating model="food"></ng-rating></td>
+		</tr>
+		<tr>
+			<td ng-click="show()">Ambience</td>
+			<td><ng-rating model="ambience"></ng-rating></td>
+		</tr>
+	</table>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+{% endverbatim %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src='/static/js/_review.js'></script>
+{% endblock%}

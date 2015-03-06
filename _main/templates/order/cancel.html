@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock %}
+
+{% block content %}
+{% verbatim %}
+<style>
+.fv-table td{
+	padding: 3px 30px 7px 0;
+}
+</style>
+<br>
+<div ng-controller="cancelCtrl">
+<form name="form" ng-submit="cancelOrder()">
+	<div ng-hide="response.order">
+		<div class="form-group">
+			<label>Order ID</label>
+			<input type="number" ng-model="cancel.order_id" required>
+		</div>
+		<div>
+			<label>Email Address</label>
+			<input ng-model="cancel.user_email" type="email" required>
+		</div>
+	</div>
+	<div ng-show="response.order">
+	<table class="fv-table span ft-l">
+		<tr>
+			<td colspan="2"><div class="head">Order Details</div></td>
+		</tr>
+		<tr>
+			<td class="field">Date</td>
+			<td class="value hl">{{response.order.date_in | date}}</td>
+		</tr>
+		<tr>
+			<td>Boat</td>
+			<td class="value hl">{{response.order.boat_name}}</td>
+		</tr>
+		<tr>
+			<td>Amount Paid</td>
+			<td class="value">{{response.order.cost_final | inr}}</td>
+		</tr>
+		<tr>
+			<td colspan="2"><div class="head">Canecllation Details</div></td>
+		</tr>
+		<tr>
+			<td>Cancellation Date</td>
+			<td class="value">{{date | date}}</td>
+		</tr>
+		<tr>
+			<td>Cancellation Charge</td>
+			<td class="value">{{response.cancel_amount | inr}}</td>
+		</tr>
+		<tr>
+			<td>Refund Amount</td>
+			<td class="value">{{response.refund_amount | inr}}</td>
+		</tr>
+	</table>
+	<table class="fv-table span brdr-left">
+		<tr>
+			<td colspan="2"><div class="head">Canecllation Policies</div></td>
+		</tr>
+		<tr ng-repeat="p in response.policies" ng-class="{selepolicy:p.id==response.policy_id}">
+			<td>{{p.text}}</td>
+			<td class="value">{{p.percent}} %</td>
+		</tr>		
+	</table>
+	</div>
+	<div class="clrb">
+		<br>
+		<button class="btn btn-primary">{{btnTxt}}</button>
+	</div>
+	<div class="status-msg">{{msg}}</div>
+</form>
+</div>
+{% endverbatim %}
+{% endblock %}
+{% block scripts %}
+	<script src='/static/js/_order.js'></script>
+{% endblock%}

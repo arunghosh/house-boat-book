@@ -1,0 +1,68 @@
+how to save photos with out getting deleted.
+how to save more than one photo
+fb authentication => rating
+login with => gmail 
+
+search hall
+short list
+rate & review hall
+hall location share
+feature for user to add hall and details => subjected to approval by admin
+
+how to reach hall
+	nearest railway station
+	airport
+	bus
+	google location
+
+**************************
+
+
+user
+	customer
+		reserver_slot
+		check_slot
+	hall_owner
+		book_slot
+		
+
+hall 
+	name
+	address
+	city
+	email
+	phone
+	website
+	*slots
+	
+	seats
+	rate_per_person
+	rent_per_hour
+	ac/non_ac
+	without_food_available
+
+slots 
+	hall_id
+	user_id = default_user
+	start_time, 
+	end_time,
+	status (reservered/booked/cancelled)
+
+user
+	user_name
+	email
+	phone
+
+Functionalities
+	book_slot(hall_id, start_time, end_time) => Creates a new slot.
+	edit_slot(slot)
+	search(filters)
+
+Learn
+------
+Authentication
+Open Authentication
+
+
+	
+

@@ -1,0 +1,88 @@
+<form name="form" ng-submit="submit()" class="col-md-5 p0">
+<table class="fv-table ft-l span">
+    <tr><td colspan="2"><div class="head">Contact Details</div></td></tr>
+    <tr>
+        <td class="field">Name</td>
+        <td class="value">
+            <input type="text" ng-model="order.name" placeholder="Enter your full name" required>
+            <!-- <div ng-show="hasError('name', 'required')">Invalid: -->
+        </td>
+    </tr>
+    <tr>
+        <td class="field">E-mail</td>
+        <td class="value"><input type="email" ng-model="order.email" placeholder="Email Address" required>
+        <!-- <div ng-show="hasError('email', 'required')">Enter a valid email</div> -->
+        </td>
+    </tr>
+    <tr>
+        <td class="field">Mobile</td>
+        <td class="value">
+        <div class="input-group">
+            <span class="input-group-addon">+91</span>
+            <input type="number" ng-model="order.phone" placeholder="Phone Number" required>
+        </div>
+        </td>
+    </tr>
+    <tr><td colspan="2"><div class="head">Address</div></td></tr>
+    <tr>
+        <td class="field">Address</td>
+        <td class="value"><input type="text" ng-model="order.address" placeholder="Address" required></td>
+    </tr>
+    <tr>
+        <td class="field">City</td>
+        <td class="value"><input type="text" ng-model="order.city" placeholder="City" required></td>
+    </tr>
+    <tr>
+        <td class="field">State</td>
+        <td class="value"><input type="text" ng-model="order.state" placeholder="State" required></td>
+    </tr>
+    <tr>
+        <td colspan="2"><label><input type="checkbox" required>I agree to terms and conditions</label></td>
+    </tr>
+
+    <tr>
+        <td colspan="2"><label><input type="checkbox" ng-model="order.req_drop">Require pick and drop(additional charges apply)</label></td>
+    </tr>
+    <tr>
+        <td><button class="btn btn-primary" ng-hide="order.success" ng-disabled_="form.$invalid">Book</button></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="alert alert-danger" ng-show="order.error">{{order.error}}</div>
+            <div class="alert alert-success" ng-show="order.success">{{order.success}}</div>
+        </td>
+    </tr>
+</table>
+</form>
+<div id="boatDetails" class="col-md-7">
+    <table class="fv-table">
+        <tr><td colspan="2"><div class="head">Booking Details</div></td></tr>
+        <tr>
+            <td class="field">Check in Date</td>
+            <td class="value hl">{{order.date | date}}</td>
+        </tr>
+        <tr>
+            <td class="field">Number of Adults</td>
+            <td class="value hl">{{order.no_adult}}</td>
+        </tr>
+        <tr>
+            <td class="field">Number of Children</td>
+            <td class="value hl">{{order.no_child}}</td>
+        </tr>
+
+        <tr>
+            <td class="field">Price</td>
+            <td class="value hl">{{boat.price.total | inr}}</td>
+        </tr>
+    </table>
+    <li><div class="head">Boat Details</div></li>
+    <li>{{boat.name}} | {{boat.company}}</li>
+    <li>{{boat.no_room}} room(s)</li>
+    <li>
+        <ul><li class="amnty" ng-repeat="a in boat.amenities">{{a}}</li></ul>
+    </li>
+    <li>
+        <ul class="images"><li ng-repeat="i in boat.images"><img ng-src="{{i.url}}"></li></ul>
+    </li>
+    <li><div class="head">Boarding details</div></li>
+</div>

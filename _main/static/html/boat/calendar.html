@@ -1,0 +1,31 @@
+<div class="calendar">
+	<div class="alert alert-info" role="alert">Click on booked slots to view order. Click on empty slot to add order for the day.</div>
+	<div class="month">
+		<div class="head">
+			<a ng-click="cc.set(cc.yymm - 1)"><span class=" glyphicon glyphicon-chevron-left"></span></a>
+			<div class="h-text">{{cc.month.name}} {{cc.month.year}}</div>
+			<a ng-click="cc.set(cc.yymm + 1)"><span class=" glyphicon glyphicon-chevron-right"></span></a>
+		</div>
+		<div>
+			<div class="day wday" ng-repeat="w in cc.weekDays">{{w}}</div>
+		</div>
+		<div>
+			<div class="day" ng-repeat="d in cc.month.blanks track by $index"></div><div class="day" ng-class="{booked:d.order_id>-1}" ng-repeat="d in cc.month.days" ng-click="cc.getOrCreate(d)">
+				<div class="date">{{d.day}}</div>
+				<div class="price">{{d.price | inr}}</div>
+				<div ng-hide="d.delta==0" class="pos" ng-class="{neg:d.delta<0}">{{d.delta}}</div>
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="day">Free</div><span></span>
+		<div class="day booked">Booked</div>
+	</div>
+</div>
+<modal-dialog show="cc.orderId" width="600px" height="400px" title="Order Details {{cc.orderId}}">
+	<order-details order-id="{{cc.orderId}}"></order-details>
+</modal-dialog>
+
+<modal-dialog show="cc.createView" width="700px" height="700px;" title="New Order">
+	<order-create boat-id="{{cc.boatId}}" date="{{cc.date}}"></order-create>
+</modal-dialog>

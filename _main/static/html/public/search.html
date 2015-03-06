@@ -1,0 +1,119 @@
+<busy show="showBusy">Searching...</busy>
+<modal-dialog show="policies" title="Cancellation Policy" height="300px" width="600px">
+    <div>
+        <span>Order Date : </span>
+        <h4 class="span">{{order.date | date}}</h4>
+    </div>
+    <br>
+    <table class="table table-striped table-bordered-">
+        <tr>
+            <th>Date</th>
+            <th>Cancellation Charge</th>
+        </tr>
+        <tr ng-repeat="p in policies">
+            <td>{{p.text}}</td>
+            <td>{{p.percent}}%</td>
+        </tr>
+    </table>
+</modal-dialog>
+
+<modal-dialog show="reviews" height="400px" width="700px" title="Reviews">
+    <table class="table">
+        <tr>
+            <th>Date</th>
+            <th>Ratings</th>
+            <th>Comment</th>
+        </tr>
+        <tr ng-repeat="r in reviews">
+            <td>{{r.date_created | date}}</td>
+            <td class="rating-list">
+                <div><show-rating value="{{r.food}}"></show-rating> (Food)</div>
+                <div><show-rating value="{{r.ambience}}"></show-rating> (Ambience)</div>
+                <div><show-rating value="{{r.cleanliness}}"></show-rating> (Cleanliness)</div>
+            </td>
+            <td>{{r.comment}}</td>
+        </tr>
+    </table>
+</modal-dialog>
+<div id="srchRsltCtnr" ng-hide="isBookView">
+    <ul class="srch-rslt">
+        <li class="book-count">
+            <table>
+            <tr><td><quick-datepicker ng-model='order.date' disable-timepicker="true" label-format='EEEE, MMMM d, yyyy'></quick-datepicker></td><td>
+            <div class="input-group">
+                <select ng-options="n for n in []|range:1:12" ng-model="order.no_adult"></select>
+                <span class="input-group-addon">Adults</span>
+            </div>
+            </td><td>
+            <div class="input-group">
+                <select ng-options="n for n in []|range:0:12" ng-model="order.no_child"></select>
+                <span class="input-group-addon">Children</span>
+            </div>
+            </td>
+            </tr>
+            </table>
+        </li>
+        <li id="filterForm">
+            <div class="filter-set" ng-repeat="f in filters">
+                <ul style="display:block" class="sele-lst">
+                    <li class="title" ng-click="showFilter(f)"><span class="glyphicon glyphicon-filter"></span>{{f.name}}</li><li ng-repeat="a in f._values|filter:{checked:true}" class="repeated-item">{{a.name}} <a ng-click="toggleFilter(a)">X</a></li>
+                </ul>
+                <ul class="fltr-lst">
+                    <li ng-repeat="a in f.values|filter:{checked:false}" class="repeated-item" ng-click="toggleFilter(a)" ng-class="{checked:a.checked}"><span class="amnt-plus">+</span>{{a.name}}</li>
+                </ul>
+            </div>
+        </li>
+        <li class="head">
+            <div class="summary">House Boat</div>
+            <div class="rooms"><a href="" class="sort-ctrl" ng-click="predicate='no_room'; reverse=!reverse">Rooms<span class="glyphicon glyphicon-sort"></span></a></div>
+            <div class="amenities">Amenities</div>
+            <div class="review"><a href="" class="sort-ctrl" ng-click="predicate='review_avg'; reverse=!reverse">Reviews<span class="glyphicon glyphicon-sort"></span></a></div>
+            <div class="last"><a href="" class="sort-ctrl" ng-click="predicate='price.base'; reverse=!reverse">Price<span class="glyphicon glyphicon-sort"></span></a></div>
+        </li>
+        <li ng-repeat="b in boats | orderBy:predicate:reverse" ng-hide="b.hide || b.overload" class="repeated-item">
+            <div class="summary">
+                <div>
+                    <div class="name"><span class="glyphicon glyphicon-bookmark"></span>{{b.company}}</div>
+                    <span>({{b.name}})</span>
+                </div>
+                <div class="company">{{b.ac_type}}</div>
+                <div class="links">
+                    <a ng-click="toggleDetails(b)">Details</a>
+                    <a ng-click="showPolicy(b)">Can. Policy</a>
+                </div>
+            </div>
+            <div class="rooms">
+                {{b.no_room}}
+            </div>
+            <div class="amenities">
+                <ul>
+                    <li class="repeated-item" ng-repeat="a in b.amenities">{{a}}</li>
+                </ul>
+            </div>
+            <div class="review">
+                <div ng-hide="b.review_cnt==0">
+                    <show-rating value="{{b.review_avg}}"></show-rating>
+                    <a class="review-cnt" ng-click="showReview(b)">{{b.review_cnt}} Reviews</a>
+                </div>
+                <div ng-show="b.review_cnt==0">--</div> 
+            </div>
+            <div class="last" ng-hide="b.showBook || !b.price">
+                <div>
+                    <div class="span fs-s">for {{b.no_adult}} adults</div>
+                    <div class="span price" ng-class="{dim:b.price.total!=b.price.base}">{{b.price.base | inr}}</div>
+                </div>
+                <div ng-hide="b.price.total==b.price.base">
+                    <div class="span fs-s">{{order.no_adult}} adults & {{order.no_child}} children</div>
+                    <div class="span price">{{b.price.total | inr}}</div>
+                </div>
+                <a href="" class="btn btn-book" ng-click="showBook(b)" ng-hide="b.isBooked">Book</a>
+                <a href="" class="btn btn-booked" ng-show="b.isBooked">Booked</a>
+            </div>
+            <div ng-show="b._images">
+                <ul class="b-images">
+                    <li ng-repeat="i in b._images" class="repeated-item"><img ng-src="{{i.url}}" alt="image"></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

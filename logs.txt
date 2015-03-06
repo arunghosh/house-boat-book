@@ -1,0 +1,141 @@
+/	search.views.home		
+/admin/	django.contrib.admin.sites.index	index	
+/admin/<app_label>/	django.contrib.admin.sites.app_index	app_list	
+/admin/account/baseuser/	django.contrib.admin.options.changelist_view	account_baseuser_changelist	
+/admin/account/baseuser/<var>/	django.contrib.admin.options.change_view	account_baseuser_change	
+/admin/account/baseuser/<var>/delete/	django.contrib.admin.options.delete_view	account_baseuser_delete	
+/admin/account/baseuser/<var>/history/	django.contrib.admin.options.history_view	account_baseuser_history	
+/admin/account/baseuser/add/	django.contrib.admin.options.add_view	account_baseuser_add	
+/admin/auth/group/	django.contrib.admin.options.changelist_view	auth_group_changelist	
+/admin/auth/group/<var>/	django.contrib.admin.options.change_view	auth_group_change	
+/admin/auth/group/<var>/delete/	django.contrib.admin.options.delete_view	auth_group_delete	
+/admin/auth/group/<var>/history/	django.contrib.admin.options.history_view	auth_group_history	
+/admin/auth/group/add/	django.contrib.admin.options.add_view	auth_group_add	
+/admin/authtoken/token/	django.contrib.admin.options.changelist_view	authtoken_token_changelist	
+/admin/authtoken/token/<var>/	django.contrib.admin.options.change_view	authtoken_token_change	
+/admin/authtoken/token/<var>/delete/	django.contrib.admin.options.delete_view	authtoken_token_delete	
+/admin/authtoken/token/<var>/history/	django.contrib.admin.options.history_view	authtoken_token_history	
+/admin/authtoken/token/add/	django.contrib.admin.options.add_view	authtoken_token_add	
+/admin/boat/amenity/	django.contrib.admin.options.changelist_view	boat_amenity_changelist	
+/admin/boat/amenity/<var>/	django.contrib.admin.options.change_view	boat_amenity_change	
+/admin/boat/amenity/<var>/delete/	django.contrib.admin.options.delete_view	boat_amenity_delete	
+/admin/boat/amenity/<var>/history/	django.contrib.admin.options.history_view	boat_amenity_history	
+/admin/boat/amenity/add/	django.contrib.admin.options.add_view	boat_amenity_add	
+/admin/boat/boat/	django.contrib.admin.options.changelist_view	boat_boat_changelist	
+/admin/boat/boat/<var>/	django.contrib.admin.options.change_view	boat_boat_change	
+/admin/boat/boat/<var>/delete/	django.contrib.admin.options.delete_view	boat_boat_delete	
+/admin/boat/boat/<var>/history/	django.contrib.admin.options.history_view	boat_boat_history	
+/admin/boat/boat/add/	django.contrib.admin.options.add_view	boat_boat_add	
+/admin/boat/image/	django.contrib.admin.options.changelist_view	boat_image_changelist	
+/admin/boat/image/<var>/	django.contrib.admin.options.change_view	boat_image_change	
+/admin/boat/image/<var>/delete/	django.contrib.admin.options.delete_view	boat_image_delete	
+/admin/boat/image/<var>/history/	django.contrib.admin.options.history_view	boat_image_history	
+/admin/boat/image/add/	django.contrib.admin.options.add_view	boat_image_add	
+/admin/cancel/boatcancelpolicy/	django.contrib.admin.options.changelist_view	cancel_boatcancelpolicy_changelist	
+/admin/cancel/boatcancelpolicy/<var>/	django.contrib.admin.options.change_view	cancel_boatcancelpolicy_change	
+/admin/cancel/boatcancelpolicy/<var>/delete/	django.contrib.admin.options.delete_view	cancel_boatcancelpolicy_delete	
+/admin/cancel/boatcancelpolicy/<var>/history/	django.contrib.admin.options.history_view	cancel_boatcancelpolicy_history	
+/admin/cancel/boatcancelpolicy/add/	django.contrib.admin.options.add_view	cancel_boatcancelpolicy_add	
+/admin/company/company/	django.contrib.admin.options.changelist_view	company_company_changelist	
+/admin/company/company/<var>/	django.contrib.admin.options.change_view	company_company_change	
+/admin/company/company/<var>/delete/	django.contrib.admin.options.delete_view	company_company_delete	
+/admin/company/company/<var>/history/	django.contrib.admin.options.history_view	company_company_history	
+/admin/company/company/add/	django.contrib.admin.options.add_view	company_company_add	
+/admin/company/owner/	django.contrib.admin.options.changelist_view	company_owner_changelist	
+/admin/company/owner/<var>/	django.contrib.admin.options.change_view	company_owner_change	
+/admin/company/owner/<var>/delete/	django.contrib.admin.options.delete_view	company_owner_delete	
+/admin/company/owner/<var>/history/	django.contrib.admin.options.history_view	company_owner_history	
+/admin/company/owner/add/	django.contrib.admin.options.add_view	company_owner_add	
+/admin/jsi18n/	django.contrib.admin.sites.i18n_javascript	jsi18n	
+/admin/login/	django.contrib.admin.sites.login	login	
+/admin/logout/	django.contrib.admin.sites.logout	logout	
+/admin/order/customer/	django.contrib.admin.options.changelist_view	order_customer_changelist	
+/admin/order/customer/<var>/	django.contrib.admin.options.change_view	order_customer_change	
+/admin/order/customer/<var>/delete/	django.contrib.admin.options.delete_view	order_customer_delete	
+/admin/order/customer/<var>/history/	django.contrib.admin.options.history_view	order_customer_history	
+/admin/order/customer/add/	django.contrib.admin.options.add_view	order_customer_add	
+/admin/order/order/	django.contrib.admin.options.changelist_view	order_order_changelist	
+/admin/order/order/<var>/	django.contrib.admin.options.change_view	order_order_change	
+/admin/order/order/<var>/delete/	django.contrib.admin.options.delete_view	order_order_delete	
+/admin/order/order/<var>/history/	django.contrib.admin.options.history_view	order_order_history	
+/admin/order/order/add/	django.contrib.admin.options.add_view	order_order_add	
+/admin/password_change/	django.contrib.admin.sites.password_change	password_change	
+/admin/password_change/done/	django.contrib.admin.sites.password_change_done	password_change_done	
+/admin/price/price/	django.contrib.admin.options.changelist_view	price_price_changelist	
+/admin/price/price/<var>/	django.contrib.admin.options.change_view	price_price_change	
+/admin/price/price/<var>/delete/	django.contrib.admin.options.delete_view	price_price_delete	
+/admin/price/price/<var>/history/	django.contrib.admin.options.history_view	price_price_history	
+/admin/price/price/add/	django.contrib.admin.options.add_view	price_price_add	
+/admin/r/<content_type_id>/<object_id>/	django.contrib.contenttypes.views.shortcut	view_on_site	
+/api/	rest_framework.routers.APIRoot	api-root	
+/api/.<format>	rest_framework.routers.APIRoot	api-root	
+/api/boats/	boat.views.AllBoatsViewSet	boat-list	
+/api/boats/.<format>	boat.views.AllBoatsViewSet	boat-list	
+/api/boats/<pk>/	boat.views.AllBoatsViewSet	boat-detail	
+/api/boats/<pk>/.<format>	boat.views.AllBoatsViewSet	boat-detail	
+/api/companies/	company.views.CompanyViewSet	company-list	
+/api/companies/.<format>	company.views.CompanyViewSet	company-list	
+/api/companies/<pk>/	company.views.CompanyViewSet	company-detail	
+/api/companies/<pk>/.<format>	company.views.CompanyViewSet	company-detail	
+/boats/	boat.views.boat_detail		
+/boats/<boat_id>/c_policy/	cancel.views.BoatCancelPolicyView		
+/boats/<boat_id>/maintenance/	maintenance.views.MaintenanceView		
+/boats/<boat_id>/orders/	order.views.BoatOrdersView		
+/boats/<boat_id>/policies/<year>-<month>-<day>/	cancel.views.BoatDatePoliciesView		
+/boats/<boat_id>/reviews/	review.views.BoatReviewsView		
+/boats/active/	boat.views.ActiveBoatsAPI		
+/boats/amenities/update/	amenity.views.UpdateBoatAmenityView		
+/boats/booked/<year>-<month>-<day>/	order.views.get_booked_boat_ids		
+/boats/c_policy/	cancel.views.CommonCancelPolicyView		
+/boats/update/	boat.views.BoatUpdateView		
+/company/	company.views.home		
+/company/<company_id>/boats/	company.views.BoatsAPI		
+/company/<company_id>/orders/	company.views.OrdersAPI		
+/company/<company_id>/owners/	company.views.OwnersAPI		
+/company/self/	company.views.CompanyDetailsView		
+/grappelli/grp-doc	django.views.generic.base.TemplateView	grp_doc	
+/grappelli/grp-doc/admin-index/	django.views.generic.base.TemplateView	grp_doc_admin_index	
+/grappelli/grp-doc/basic-page-structure/	django.views.generic.base.TemplateView	grp_doc_basic_page_structure	
+/grappelli/grp-doc/change-form/	django.views.generic.base.TemplateView	grp_doc_change_form	
+/grappelli/grp-doc/change-list/	django.views.generic.base.TemplateView	grp_doc_change_list	
+/grappelli/grp-doc/context-navigation/	django.views.generic.base.TemplateView	grp_doc_context_navigation	
+/grappelli/grp-doc/date-hierarchy/	django.views.generic.base.TemplateView	grp_doc_date_hierarchy	
+/grappelli/grp-doc/errors/	django.views.generic.base.TemplateView	grp_doc_errors	
+/grappelli/grp-doc/fieldsets/	django.views.generic.base.TemplateView	grp_doc_fieldsets	
+/grappelli/grp-doc/filter/	django.views.generic.base.TemplateView	grp_doc_filter	
+/grappelli/grp-doc/form-fields/	django.views.generic.base.TemplateView	grp_doc_form_fields	
+/grappelli/grp-doc/groups/	django.views.generic.base.TemplateView	grp_doc_groups	
+/grappelli/grp-doc/modules/	django.views.generic.base.TemplateView	grp_doc_modules	
+/grappelli/grp-doc/mueller-grid-system-layouts/	django.views.generic.base.TemplateView	grp_doc_mueller_grid_system_layouts	
+/grappelli/grp-doc/mueller-grid-system-tests/	django.views.generic.base.TemplateView	grp_doc_mueller_grid_system_tests	
+/grappelli/grp-doc/mueller-grid-system/	django.views.generic.base.TemplateView	grp_doc_mueller_grid_system	
+/grappelli/grp-doc/navigation/	django.views.generic.base.TemplateView	grp_doc_navigation	
+/grappelli/grp-doc/object-tools/	django.views.generic.base.TemplateView	grp_doc_object_tools	
+/grappelli/grp-doc/pagination/	django.views.generic.base.TemplateView	grp_doc_pagination	
+/grappelli/grp-doc/search-form/	django.views.generic.base.TemplateView	grp_doc_search_form	
+/grappelli/grp-doc/submit-rows/	django.views.generic.base.TemplateView	grp_doc_submit_rows	
+/grappelli/grp-doc/tables/	django.views.generic.base.TemplateView	grp_doc_tables	
+/grappelli/grp-doc/tools/	django.views.generic.base.TemplateView	grp_doc_tools	
+/grappelli/lookup/autocomplete/	grappelli.views.related.AutocompleteLookup	grp_autocomplete_lookup	
+/grappelli/lookup/m2m/	grappelli.views.related.M2MLookup	grp_m2m_lookup	
+/grappelli/lookup/related/	grappelli.views.related.RelatedLookup	grp_related_lookup	
+/grappelli/switch/user/<object_id>/	grappelli.views.switch.switch_user	grp_switch_user	login_required
+/list/ac_types/	helper.list_views.ac_opts		
+/list/amenities/	helper.list_views.amenities		
+/manage/	manager.views.HomeView		
+/manage/logout/	manager.views.logout_user		
+/manage/menus/	manager.views.MenuView		
+/manage/orders/	manager.views.OrderAPI		
+/media/<path>	django.views.static.serve		
+/order/<order_id>/	order.views.OrdersDetailsView		
+/order/cancel/	cancel.views.OrderCancelView		
+/order/create/	order.views.OrderCreateView		
+/order/review/	review.views.AddReviewView		
+/price/base/	price.views.UpdateBoatPriceView		
+/price/boat/<boat_id>/	price.views.BoatPricesView		
+/price/boat/<boat_id>/<year>-<month>-<day>/	price.views.BoatDatePricesView		
+/price/date/<year>-<month>-<day>/	price.views.DatePricesView		
+/price/month/<boat_id>/<year>/<month>/	price.views.MonthView		
+/price/season/	price.views.UpdateSeasonPriceView		
+/search/ids/	search.views.BoatIdsView		
+/static/<path>	django.views.static.serve		

@@ -1,0 +1,32 @@
+{% extends "manager/base.html" %}
+{% block title %}Boats{% endblock %}
+{% block content %}
+
+{% verbatim %}
+<div ng-controller="boatCtrl">
+	<div class="boat-banner">
+		<div class="head">
+			<h3>{{boat.name}} ({{boat.type}}) | {{boat.no_room}} Rooms | {{boat.ac_type}}</h3>
+			<div class="ft-r span">
+				<a href="/manage/"><span class="glyphicon glyphicon-home"></span> Home</a>
+			</div>
+		</div>
+	</div>
+	<div class="clr-b">
+		<div class="menu-panel">
+			<ul>
+				<li ng-repeat="r in routes" ng-class="{sele:r.selected}" ng-click="show(r)">{{r.name}}<span class="glyphicon glyphicon-{{r.icon}}"></span></li>
+			</ul>
+		</div>
+		<div class="sele-panel">
+			<ng-view></ng-view>	
+		</div>
+	</div>
+</div>
+{% endverbatim %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src='/static/js/_boat.js'></script>
+{% endblock%}

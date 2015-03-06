@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}BoK{% endblock %}
+{% block content %}
+
+{% verbatim %}
+<ng-view></ng-view>
+{% endverbatim %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src='/static/js/_home.js'></script>
+	<script src='/static/js/_search.js'></script>
+    <script src='/static/js/_order.js'></script>
+{% endblock%}

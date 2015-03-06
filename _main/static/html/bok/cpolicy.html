@@ -1,0 +1,55 @@
+<div class="alert alert-danger" role="alert" ng-show="cpc.validation">{{cpc.validation}}</div>
+
+<!-- <div class="alert alert-info" role="alert">If boat specific cancellation polcies is invalid common cancellation policies will be used.</div>
+ -->
+<div class="table-title">Cancellation Policies</div>
+<table class="table table-striped table-bordered">
+	<tr>
+		<th>#</th>
+		<th>Days for Journey</th>
+		<th>Cancellation Charge</th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="p in cpc.policies">
+		<td>{{$index + 1}}</td>
+		<td>{{p.days}} days</td>
+		<td>{{p.percent}} %</td>
+		<td><a ng-click="cpc.edit(p)" class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span></a></td>
+	</tr>
+	<tr>
+		<td colspan="7" ng-click="cpc.edit()" class="btn-txt">Add Cancellation Policy</td>
+	</tr>
+</table>
+<div ng-show="cpc.common">
+	<div class="table-title">Common Cancellation Policies</div>
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th>#</th>
+			<th>Days</th>
+			<th>Cancellation Charge</th>
+		</tr>
+		<tr ng-repeat="p in cpc.common">
+			<td>{{$index + 1}}</td>
+			<td>{{p.days}}</td>
+			<td>{{p.percent}} %</td>
+		</tr>
+	</table>
+</div>
+<modal-dialog show="cpc.policy" title="Cancellation Policy" height="260px" width="600px">
+	<form ng-submit="cpc.update()" name="form">
+		<table class="fv-table prices">
+			<tr>
+				<td>No of days from Date of Journey</td>
+				<td><input type="number" ng-model="cpc.policy.days"></td>
+			</tr>
+			<tr>
+				<td>Cancellation Charge</td>
+				<td><input type="number" ng-model="cpc.policy.percent"></td>
+			</tr>
+			<tr>
+				<td><br><button type="submit" class="btn btn-primary">Update</button></td>
+			</tr>
+		</table>
+		<div class="alert alert-danger" ng-show="cpc.error" role="alert">{{cpc.error}}</div>
+	</form>
+</modal-dialog>

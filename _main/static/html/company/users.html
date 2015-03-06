@@ -1,0 +1,14 @@
+<table class="table table-bordered table-hover ptr">
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Email Addredd</th>
+		<th>Phone #</th>
+	</tr>
+	<tr ng-repeat="u in users">
+		<td>{{$index + 1}}</td>
+		<td>{{u.user.name}}</td>
+		<td>{{u.user.email}}</td>
+		<td>{{u.user.phone}}</td>
+	</tr>
+</table>

@@ -1,0 +1,30 @@
+<table class="table table-hover table-bordered order-lst">
+	<tr>
+		<th>#</th>
+		<th>Date</th>
+		<th>Boat</th>
+		<th>Adults</th>
+		<th>Children</th>
+		<th>Is Veg</th>
+		<th>Booked By</th>
+		<th>Price</th>
+		<th>Commission</th>
+		<th>Status</th>
+	</tr>
+	<tr ng-repeat="o in orders" class="{{o.status | lowercase}} ptr" ng-click="showOrder(o)">
+		<td>{{$index + 1}}</td>
+		<td>{{o.date_in | date}}</td>
+		<td>{{o.boat_name}}</td>
+		<td>{{o.no_adult}}</td>
+		<td>{{o.no_child}}</td>
+		<td><span class="{{o.is_veg | tickicon}}"></span></td>
+		<td>{{o.source}}</td>
+		<th>{{o.cost_final | inr}}</th>
+		<th>{{o.commission * o.cost_final / 100 | inr}} ({{o.commission}}%)</th>
+		<td>{{o.status}}</td>
+	</tr>
+</table>
+
+<modal-dialog show="order" width="600px" height="400px" title="Order Details {{order.id}}">
+	<order-details order-id="{{order.id}}"></order-details>
+</modal-dialog>

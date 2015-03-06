@@ -1,0 +1,38 @@
+<div>
+	<table class="order-details">
+		<tr>
+			<td class="field">Order ID</td>
+			<td class="value">{{order.id}}</td>
+		</tr>
+		<tr>
+			<td class="field">Date of Booking</td>
+			<td class="value">{{order.date_confirm | date}}</td>
+		</tr>
+		<tr>
+			<td class="field">Date of Journey</td>
+			<td class="value">{{order.date_in | date}}</td>
+		</tr>
+		<tr>
+			<td class="field">Vegetarian</td>
+			<td class="value"><span class="{{order.is_veg | tickicon}}"></span></td>
+		</tr>
+		<tr>
+			<td class="field">Number of Adults</td>
+			<td class="value">{{order.no_adult}}</td>
+		</tr>
+		<tr>
+			<td class="field">Number of Childern</td>
+			<td class="value">{{order.no_child}}</td>
+		</tr>
+		<tr>
+			<td class="field">Base Price</td>
+			<td class="value">{{order.price_base | inr}}</td>
+		</tr>
+		<tr>
+			<td class="field">Total Cost</td>
+			<td class="value hl">{{order.cost_final | inr}}</td>
+		</tr>
+
+
+	</table>
+</div>

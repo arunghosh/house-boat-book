@@ -1,0 +1,63 @@
+{% extends "manager/base.html" %}
+{% block title %}Company{% endblock %}
+{% block content %}
+{% verbatim %}
+<div ng-controller="companyCtrl">
+	<div class="boat-banner">
+		<div class="head">
+			<h3>Company: {{company.name}}</h3>
+			<div class="ft-r span">
+				<a href="/manage/"><span class="glyphicon glyphicon-home"></span> Home</a>
+			</div>
+		</div>
+	</div>
+	<div class="dash-ctnr">
+		<div class="menu-panel">
+			<ul>
+				<li ng-repeat="r in routes" ng-class="{sele:r.selected}" ng-click="show(r)">{{r.name}}<span class="glyphicon glyphicon-{{r.icon}}"></span></li>
+			</ul>
+		</div>
+		<div class="sele-panel">
+			<ng-view></ng-view>
+<!-- 			<table class="table table-bordered table-hover ptr" ng-show="routes[1].selected">
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Rooms</th>
+					<th>Is available to BoK</th>
+				</tr>
+				<tr ng-repeat="b in boats" ng-click="showBoat(b)">
+					<td>{{$index + 1}}</td>
+					<td>{{b.name}}</td>
+					<td>{{b.type}}</td>
+					<td>{{b.no_room}}</td>
+					<td><span class="{{b.is_bok | tickicon}}"></span></td>
+				</tr>
+			</table>
+			<table class="table table-bordered table-hover ptr" ng-show="routes[2].selected">
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Email Addredd</th>
+					<th>Phone #</th>
+				</tr>
+				<tr ng-repeat="u in users">
+					<td>{{$index + 1}}</td>
+					<td>{{u.user.name}}</td>
+					<td>{{u.user.email}}</td>
+					<td>{{u.user.phone}}</td>
+				</tr>
+			</table>			
+			<order-list list="orders" count="{{orders.count}}" ng-show="routes[0].selected"></order-list> -->
+		</div>
+		</div>
+	</div>
+</div>
+{% endverbatim %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src='/static/js/_company.js'></script>
+{% endblock%}

@@ -1,0 +1,16 @@
+<table class="table table-bordered table-hover ptr">
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Rooms</th>
+		<th>Is available to BoK</th>
+	</tr>
+	<tr ng-repeat="b in boats" ng-click="showBoat(b)">
+		<td>{{$index + 1}}</td>
+		<td>{{b.name}}</td>
+		<td>{{b.type}}</td>
+		<td>{{b.no_room}}</td>
+		<td><span class="{{b.is_bok | tickicon}}"></span></td>
+	</tr>
+</table>

@@ -1,0 +1,18 @@
+<table class="table">
+	<tr>
+		<th>#</th>
+		<th>Date</th>
+		<th>Ratings</th>
+		<th>Comment</th>
+	</tr>
+	<tr ng-repeat="r in rc.reviews">
+		<td>{{$index + 1}}</td>
+		<td>{{r.date_created | date}}</td>
+		<td class="rating-list">
+			<div><show-rating value="{{r.food}}"></show-rating> (Food)</div>
+			<div><show-rating value="{{r.ambience}}"></show-rating> (Ambience)</div>
+			<div><show-rating value="{{r.cleanliness}}"></show-rating> (Cleanliness)</div>
+		</td>
+		<td>{{r.comment}}</td>
+	</tr>
+</table>

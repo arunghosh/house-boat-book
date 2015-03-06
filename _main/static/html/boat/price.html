@@ -1,0 +1,83 @@
+<modal-dialog show="pc.price" title="Boat Price" height="400px" width="600px">
+	<div class="alert alert-info" role="alert">This price change shall only be applicalble to bookings made after successful update.</div>
+	<form ng-submit="pc.update()" class="form-horizontal" name="form">
+		<table class="fv-table prices">
+			<tr ng-show="pc.price.date_from">
+				<td>From</td>
+				<td><quick-datepicker ng-model='pc.price.date_from' disable-timepicker="true" label-format='EEEE, MMMM d, yyyy' required></quick-datepicker></td>
+			</tr>
+			<tr ng-show="pc.price.date_from">
+				<td>To</td>
+				<td><quick-datepicker ng-model='pc.price.date_to' disable-timepicker="true" label-format='EEEE, MMMM d, yyyy' required></quick-datepicker></td>
+			</tr>
+			<tr>
+				<td>Base Price</td>
+				<td>
+					<div class="input-group">
+						<span class="input-group-addon">₹</span>
+						<input type="number" ng-model='pc.price.base' required>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Adult Price</td>
+				<td>
+					<div class="input-group">
+						<span class="input-group-addon">₹</span>
+						<input type="number" ng-model='pc.price.adult' required>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>Child Price</td>
+				<td>
+					<div class="input-group">
+						<span class="input-group-addon">₹</span>
+						<input type="number" ng-model='pc.price.child' required>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><br><button type="submit" class="btn btn-primary">Update</button></td>
+			</tr>
+		</table>
+		<div class="alert alert-danger" ng-show="pc.error">{{pc.error}}</div>
+	</form>
+	<br>
+</modal-dialog>
+
+<div class="alert alert-info" role="alert">This price change shall only be applicalble to bookings made after successful update.</div>
+
+<table class="table table-hover table-bordered">
+
+	<tr>
+		<th>#</th>
+		<th>From</th>
+		<th>To</th>
+		<th>Price</th>
+		<th>Extra Per Adult</th>
+		<th>Extra Per Child</th>
+		<th></th>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2">Base Price</td>
+		<td>{{pc.base.base | inr}}</td>
+		<td>{{pc.base.adult | inr}}</td>
+		<td>{{pc.base.child | inr}}</td>
+		<td><a ng-click="pc.edit(pc.base)" class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span></a></td>
+	</tr>
+
+	<tr ng-repeat="p in pc.season" ng-class="{updated:p.isUpdated}">
+		<td>{{$index + 1}}</td>
+		<td>{{p.date_from | date}}</td>
+		<td>{{p.date_to | date}}</td>
+		<td>{{p.base | inr}} <span class="fs-s dim">({{p.base - pc.base.base}})</span></td>
+		<td>{{p.adult | inr}}</td>
+		<td>{{p.child | inr}}</td>
+		<td><a ng-click="pc.edit(p)" class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span></a></td>
+	</tr>
+	<tr>
+		<td colspan="7" ng-click="pc.edit()" class="btn-txt">Add Another Pricing</td>
+	</tr>
+</table>

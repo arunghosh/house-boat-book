@@ -1,0 +1,8 @@
+<div>
+	<ul ng-hide="amc._ae"><li class="btn btn-gray btn-xs" ng-click="amc._ae=true"><span class="glyphicon glyphicon-edit"></span>Edit</li><li class="amenity company" ng-repeat="a in amc.boat.amenities">{{a}}</li></ul>
+</div>
+<div ng-show="amc._ae">
+	<div class="alert alert-info" role="alert">Click on the individual amenity to toggle selection of the amenity.</div>
+	<br>
+	<ul><li class="amenity company ptr" ng-class="{checked:a.checked}" ng-click="a.toggle()" ng-repeat="a in amc.amenities">{{a.name}}</li></ul>
+</div>

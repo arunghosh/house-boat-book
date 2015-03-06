@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>{% block title %}{% endblock %} | Boats of Kerala</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href='{% static "css/style.css" %}' type="text/css"/>
+    <!-- <link rel="stylesheet" href='{% static "css/bootstrap.css" %}' type="text/css"/> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="banner">
+    <div class="main-align">
+        <div class="company-name">
+<!--         <ul id="logo">
+            <li style="font-size:15px;">B</li>
+            <li style="font-size:14px;">o</li>
+            <li style="font-size:13px;">a</li>
+            <li style="font-size:12px;">t</li>
+            <li style="font-size:11px;">s</li>
+            <li style="font-size:10px;">of</li>
+            <li style="font-size:11px;">k</li>
+            <li style="font-size:12px;">e</li>
+            <li style="font-size:13px;">r</li>
+            <li style="font-size:14px;">a</li>
+            <li style="font-size:15px;">l</li>
+            <li style="font-size:16px;">A</li>
+        </ul> -->
+        Boats of Kerala</div>
+        <ul class="nav">
+        </ul>
+    </div>
+</div>
+
+<div style="text-align:center;min-height:600px;">
+    <div class="main-align">
+        <div ng-app="app">{% block content %}{% endblock %}</div>
+        {% block nonapp %}{% endblock %}
+    </div>
+</div>
+
+<div id="footer">
+    <div class="main-align">
+        © 2014 Copyright RawData
+    </div>
+</div>
+<script src='/static/js/tp/angular.min.js'></script>
+<script src='/static/js/tp/angular-animate.min.js'></script>
+<script src='/static/js/tp/angular-cookies.min.js'></script>
+<script src='/static/js/tp/angular-route.min.js'></script>
+<link rel="stylesheet" href='/static/css/ng-quick-date.css' type="text/css"/>
+<script src='/static/js/tp/ng-quick-date.min.js'></script>    
+<script src='/static/js/_common.js'></script>
+{% block scripts %} {% endblock %}
+</body>
+</html>

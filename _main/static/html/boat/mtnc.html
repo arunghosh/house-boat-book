@@ -1,0 +1,37 @@
+<modal-dialog show="mc.mtnc" title="Add Maintenance Period" height="260px" width="600px">
+	<form ng-submit="mc.update()" name="form">
+		<table class="fv-table prices">
+			<tr>
+				<td>From</td>
+				<td><quick-datepicker ng-model='mc.mtnc.date_from' disable-timepicker="true" label-format='EEEE, MMMM d, yyyy' required></quick-datepicker></td>
+			</tr>
+			<tr>
+				<td>To</td>
+				<td><quick-datepicker ng-model='mc.mtnc.date_to' disable-timepicker="true" label-format='EEEE, MMMM d, yyyy' required></quick-datepicker></td>
+			</tr>
+			<tr>
+				<td><br><button type="submit" class="btn btn-primary">Update</button></td>
+			</tr>
+		</table>
+		<div class="alert alert-danger" ng-show="mc.error">{{mc.error}}</div>
+	</form>
+</modal-dialog>
+<div class="alert alert-info" role="alert">The houst boat cannot be set to maintenance if an order/booking exist in the given period</div>
+
+<table class="table table-hover table-bordered">
+	<tr>
+		<th>#</th>
+		<th>From</th>
+		<th>To</th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="m in mc.mtncs">
+		<td>{{$index + 1}}</td>
+		<td>{{m.date_from | date}}</td>
+		<td>{{m.date_to | date}}</td>
+		<td><a ng-click="mc.edit(m)" class="btn btn-xs"><span class="glyphicon glyphicon-edit"></span></a></td>
+	</tr>
+	<tr>
+		<td colspan="7" ng-click="mc.edit()" class="btn-txt">Add Maintenance</td>
+	</tr>
+</table>

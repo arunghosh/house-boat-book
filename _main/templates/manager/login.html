@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Search Halls{% endblock %}
+{% block nonapp %}
+    <form action="" method="post" class="form">
+        {% csrf_token %}
+        <table>
+            <div class="form-group">
+                <label>User Name</label>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                {{ form.password }}
+            </div>
+        </table>
+        <button type="submit">Login</button>
+        {% if form.custom_errors %}
+            {% for e in form.custom_errors %}
+                <div>{{e}}</div>
+            {% endfor %}
+        {% endif %}
+    </form>
+{% endblock %}

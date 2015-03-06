@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>{% block title %}{% endblock %}-Admin | Boats of Kerala</title>
+    {% load static %}
+    <link rel="stylesheet" href='{% static "css/style.css" %}' type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<style type="text/css">
+    .main-align{
+        width: 100%;
+    }
+
+    body{
+        background: #111;
+    }
+
+    #footer {
+        background: #222;
+        color: #666;
+        font-size: 12px;
+        clear: both;
+        text-align: center;
+        padding: 4px;
+    }
+
+    .banner{
+        padding: 0;
+        font-weight: bold;
+        border-bottom: 1px solid rgba(0,0,0,.5);
+        color: #fff;
+        margin-bottom: 0;
+        background: #111;
+    }
+
+    .company-name {
+        display: inline-block;
+        font-family: arial;
+        color: #16a085;
+        font-size: 17px;
+        padding: 14px 0px 6px 20px;
+    }
+</style>
+
+<div class="banner">
+    <div class="main-align">
+        <div class="company-name">
+        Boats of Kerala</div>
+        <div class="span ft-r">
+            <div class="u-name">
+                <span class="glyphicon glyphicon-user"></span>
+                <span>{{user.name}} ({{user.type_str}})</span>
+            </div>
+            <a href="/manage/logout/" id="logout">Logout</a>
+        </div>
+    </div>
+</div>
+
+<div style="text-align:center;min-height:600px;">
+    <div class="main-align">
+        <div ng-app="app">{% block content %}{% endblock %}</div>
+    </div>
+</div>
+
+<div id="footer">
+    <div class="main-align">
+        © 2014 Copyright RawData
+    </div>
+</div>
+
+<script src='/static/js/tp/angular.min.js'></script>
+<script src='/static/js/tp/angular-animate.min.js'></script>
+<script src='/static/js/tp/angular-cookies.min.js'></script>
+<script src='/static/js/tp/angular-route.min.js'></script>
+<!-- <script src='/static/js/angular-sanitize.min.js'></script> -->
+<link rel="stylesheet" href='/static/css/ng-quick-date.css' type="text/css"/>
+<script src='/static/js/tp/ng-quick-date.min.js'></script>    
+<script src='/static/js/_common.js'></script>
+{% block scripts %} {% endblock %}
+</body>
+</html>
